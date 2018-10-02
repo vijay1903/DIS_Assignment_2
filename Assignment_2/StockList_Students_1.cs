@@ -228,17 +228,15 @@ namespace Assignment_2
     //return type  : NA
     public void SortByValue()
         {
-            StockNode currNode = head;
-            StockNode nextNode = head.Next;
+            StockNode currNode = this.head;
+            StockNode nextNode = this.head.Next;
             while (currNode != null) // Traversing through the list
             {
-                while(nextNode != null)
+                while (nextNode != null)
                 {
-                    if(currNode.StockHolding.Holdings > nextNode.StockHolding.Holdings) //swap nodes if the holdings is more than the next one.
+                    if (currNode.StockHolding.Holdings > nextNode.StockHolding.Holdings) //swap nodes if the holdings is more than the next one.
                     {
-                        StockNode t = currNode;
-                        currNode = nextNode; 
-                        nextNode = t;
+                        this.Swap(currNode.StockHolding);
                     }
                     nextNode = nextNode.Next;
                 }
@@ -246,23 +244,21 @@ namespace Assignment_2
             }
         }
 
-    //param        : NA
-    //summary      : Sort the list alphabatically
-    //return       : NA
-    //return type  : NA
-    public void SortByName()
+        //param        : NA
+        //summary      : Sort the list alphabatically
+        //return       : NA
+        //return type  : NA
+        public void SortByName()  //sorting list
         {
-            StockNode currNode = head;
-            StockNode nextNode = head.Next;
+            StockNode currNode = this.head;
+            StockNode nextNode = this.head.Next;
             while (currNode != null) // Traversing through the list
             {
                 while (nextNode != null)
                 {
-                    if ((currNode.StockHolding.Name.CompareTo(nextNode.StockHolding.Name)) > 1) //swap nodes if the name comes first alphabetically.
+                    if (string.Compare(nextNode.StockHolding.Name, currNode.StockHolding.Name) > 0) //swap nodes if the name comes first alphabetically.
                     {
-                         StockNode t = currNode;
-                        currNode = nextNode; 
-                        nextNode = t;
+                        this.Swap(currNode.StockHolding);
                     }
                     nextNode = nextNode.Next;
                 }
