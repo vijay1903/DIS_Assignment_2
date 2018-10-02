@@ -236,7 +236,7 @@ namespace Assignment_2
                 {
                     if (currNode.StockHolding.Holdings > nextNode.StockHolding.Holdings) //swap nodes if the holdings is more than the next one.
                     {
-                        this.Swap(currNode.StockHolding);
+                        this.Swap(currNode.StockHolding); //calling the swap function
                     }
                     nextNode = nextNode.Next;
                 }
@@ -258,7 +258,7 @@ namespace Assignment_2
                 {
                     if (string.Compare(nextNode.StockHolding.Name, currNode.StockHolding.Name) > 0) //swap nodes if the name comes first alphabetically.
                     {
-                        this.Swap(currNode.StockHolding);
+                        this.Swap(currNode.StockHolding);  //calling the swap function
                     }
                     nextNode = nextNode.Next;
                 }

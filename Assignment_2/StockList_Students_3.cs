@@ -17,7 +17,7 @@ namespace Assignment_2
 
             // write your implementation here
             StockNode current = head;
-            while (current != null)
+            while (current != null) // traverse through the list and get the value from number of share holdings and their prices.
             {
                 value += (current.StockHolding.Holdings * current.StockHolding.CurrentPrice);
                 current = current.Next;
@@ -30,13 +30,13 @@ namespace Assignment_2
         {
             int similarityIndex = 0;
             // Considering Similarity means the Stocks with the same name.
-            StockNode node1 = head;
+            StockNode node1 = head; // store the head pointers in Temporary variables
             StockNode node2 = listToCompare.head;
-            while(node1 != null)
+            while(node1 != null) // loop through the first list
             {
-                while(node2 != null)
+                while(node2 != null) // loop through the second loop
                 {
-                    if(node1.StockHolding.Name == node2.StockHolding.Name)
+                    if(node1.StockHolding.Name == node2.StockHolding.Name) // if there are two nodes with same name then increment the similarityIndex by 1
                     {
                         similarityIndex++;
                     }
@@ -44,7 +44,6 @@ namespace Assignment_2
                 }
                 node1 = node1.Next;
             }
-
             return similarityIndex;
         }
 
@@ -55,11 +54,11 @@ namespace Assignment_2
         public void Print()
         {
             StockNode current = head;
-            if (current == null)
+            if (current == null) // if its an empty linked list
             {
                 Console.WriteLine("No Data to print");
             }
-            while (current != null)
+            while (current != null) //loop through the linked list and print stock Holding detail for each node.
             {
                 Console.WriteLine(current.StockHolding);
                 current = current.Next;
