@@ -227,19 +227,47 @@ namespace Assignment_2
     //return       : NA
     //return type  : NA
     public void SortByValue()
-    {
-      // write your implementation here
-
-    }
+        {
+            StockNode currNode = head;
+            StockNode nextNode = head.Next;
+            while (currNode != null) // Traversing through the list
+            {
+                while(nextNode != null)
+                {
+                    if(currNode.StockHolding.Holdings > nextNode.StockHolding.Holdings) //swap nodes if the holdings is more than the next one.
+                    {
+                        StockNode t = currNode;
+                        currNode = nextNode; 
+                        nextNode = t;
+                    }
+                    nextNode = nextNode.Next;
+                }
+                currNode = currNode.Next;
+            }
+        }
 
     //param        : NA
     //summary      : Sort the list alphabatically
     //return       : NA
     //return type  : NA
     public void SortByName()
-    {
-      // write your implementation here
-
-    }
+        {
+            StockNode currNode = head;
+            StockNode nextNode = head.Next;
+            while (currNode != null) // Traversing through the list
+            {
+                while (nextNode != null)
+                {
+                    if ((currNode.StockHolding.Name.CompareTo(nextNode.StockHolding.Name)) > 1) //swap nodes if the name comes first alphabetically.
+                    {
+                         StockNode t = currNode;
+                        currNode = nextNode; 
+                        nextNode = t;
+                    }
+                    nextNode = nextNode.Next;
+                }
+                currNode = currNode.Next;
+            }
+        }
   }
 }
